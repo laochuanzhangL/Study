@@ -1,17 +1,7 @@
-const path = require("path")
-module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-  },
+需要postcss-loader 然后另外安装需要使用的插件
+```c
   module: {
     rules: [
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
-      },
       {
         test: /\.(sc|sa|c)ss$/,
         use: [
@@ -21,9 +11,9 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               ident: "postcss",
-              sourceMap: true,
+              sourceMap:true,
               plugins: (loader) => {
-                require("autoprefixer")
+                require("autoprefixer")//此处写需要用到的插件
               },
             },
           },
@@ -32,4 +22,4 @@ module.exports = {
       },
     ],
   },
-}
+```
