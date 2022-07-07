@@ -4,28 +4,41 @@
   "description": "",
   "main": "webpack.config.js",
   "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "eslint": "^5.2.0",
+    "eslint-loader": "^2.1.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^8.1.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.0",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.16.3",
-    "webpack-cli": "^3.1.0"
-  },
-  "dependencies": {
-    "autoprefixer": "^9.0.1",
-    "lodash": "^4.17.10",
+    "image-webpack-loader": "^4.3.1",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
-    "sass-loader": "^7.0.3"
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.3",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-runtime": "^6.26.0",
+    "lodash": "^4.17.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx webpack",
-    "dist": "npx webpack --config webpack.product.config.js"
+    "build": "npx webpack --watch  --config webpack.prod.js",
+    "start": "npx webpack-dev-server --config webpack.dev.js"
   },
   "author": "",
   "license": "ISC"

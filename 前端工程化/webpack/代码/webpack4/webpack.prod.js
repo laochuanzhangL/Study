@@ -1,21 +1,15 @@
 const path = require("path")
-module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-  },
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const merge=require('webpack-merge')
+const common=require('./webpack.common')
+let prodConfig  = {
+  mode: "production",
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
-      },
-      {
         test: /\.(sc|sa|c)ss$/,
         use: [
-          { loader: "style-loader" },
+          MiniCssExtractPlugin.loader,
           { loader: "css-loader", options: { sourceMap: true } },
           {
             loader: "postcss-loader",
@@ -32,4 +26,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash].css", // 设置最终输出的文件名
+      chunkFilename: "[id].css",
+    }),
+  ],
 }
+
+module.exports=merge(common,prodConfig)

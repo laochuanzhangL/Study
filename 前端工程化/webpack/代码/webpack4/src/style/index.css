@@ -1,4 +1,6 @@
 .box{
+    width: 100%;
+    height: 200px;
     color: red;
     display: flex;
     background-image: url("../assets/bg.jpg");
