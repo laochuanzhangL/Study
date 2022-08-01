@@ -1,3 +1,4 @@
+const fs = require("fs")
 const path = require("path")
 
 //获取路径中的基本名称
@@ -39,7 +40,6 @@ const path = require("path")
 // console.log(path.isAbsolute('/a'))
 // console.log(path.isAbsolute('////a'))
 
-
 // console.log(path.join('a/b','c','index.html'))//a\b\c\index.html
 // console.log(path.join('/a/b','c','index.html'))//\a\b\c\index.html
 // console.log(path.join('/a/b','c','../','index.html'))//\a\b\index.html
@@ -51,10 +51,18 @@ const path = require("path")
 // console.log(path.normalize('a//\b/\\c../d'))
 
 //resolve
-console.log(path.resolve())//E:\前端学习笔记\node.js\代码 
-console.log(path.resolve('a','b'))//E:\前端学习笔记\node.js\代码\a\b
-console.log(path.resolve('a','/b'))//E:\b
-console.log(path.resolve('/a','b'))//E:\a\b
-console.log(path.resolve('/a','/b'))//E:\b
-//常用
-console.log(path.resolve('index.js'))//E:\前端学习笔记\node.js\代码\index.js
+// console.log(path.resolve())//E:\前端学习笔记\node.js\代码
+// console.log(path.resolve('a','b'))//E:\前端学习笔记\node.js\代码\a\b
+// console.log(path.resolve('a','/b'))//E:\b
+// console.log(path.resolve('/a','b'))//E:\a\b
+// console.log(path.resolve('/a','/b'))//E:\b
+// //常用
+// console.log(path.resolve('index.js'))//E:\前端学习笔记\node.js\代码\index.js
+
+fs.open(path.resolve("test.txt"), "r", (err, fd) => {
+  console.log(fd)
+  fs.close(fd,err=>{
+    console.log('关闭')
+  })
+})
+
