@@ -59,10 +59,4 @@ const path = require("path")
 // //常用
 // console.log(path.resolve('index.js'))//E:\前端学习笔记\node.js\代码\index.js
 
-fs.open(path.resolve("test.txt"), "r", (err, fd) => {
-  console.log(fd)
-  fs.close(fd,err=>{
-    console.log('关闭')
-  })
-})
 

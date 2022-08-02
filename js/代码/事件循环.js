@@ -48,22 +48,68 @@
 //   console.log("p3") //1
 // })
 
+// setTimeout(() => {
+//   console.log("s1")
+//   Promise.resolve().then(() => {
+//     console.log("p1")
+//   })
+//   Promise.reject().catch(() => {
+//     console.log("p2")
+//   })
+// })
+
+// Promise.resolve.then(()=>{
+//     console.log('p1')
+//     setTimeout(()=>{
+//         console.log('s2')
+//     })
+//     setTimeout(()=>{
+//         console.log('s3')
+//     })
+// })
+
+// setTimeout(()=>{
+//     console.log('s1')
+// })
+// Promise.resolve().then(()=>{
+//     console.log('p1')
+// })
+
+// console.log('start')
+
+// process.nextTick(()=>{
+//     console.log('tick')
+// })
+
+// setImmediate(()=>{
+//     console.log('setImmediate')
+// })
+// console.log('end')
+
 setTimeout(() => {
-  console.log("s1") 
+  console.log("s1")//4
   Promise.resolve().then(() => {
-    console.log("p1")  
+    console.log("p1")//6
   })
-  Promise.reject().catch(() => {
-    console.log("p2") 
+  process.nextTick(() => {
+    console.log("t1")//5
   })
 })
 
-Promise.resolve.then(()=>{
-    console.log('p1')
-    setTimeout(()=>{
-        console.log('s2')
-    })
-    setTimeout(()=>{
-        console.log('s3')
-    })
+Promise.resolve().then(() => {
+  console.log("p2")//3
 })
+
+console.log('start')//1
+
+setTimeout(() => {
+  console.log("s2")//7
+  Promise.resolve().then(() => {
+    console.log("p3")//9
+  })
+  process.nextTick(() => {
+    console.log("t2")//8
+  })
+})
+
+console.log('end')//2
