@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7]
+        //indexOf
+        console.log(arr.indexOf(5, 2));//从索引为2的开始查找，找到则返回数值5的索引 若无此数字则返回-1
+        console.log(arr.lastIndexOf(7));//从右向左查找
+        //includes返回布尔值，找到则true反之则false
+        console.log(arr.includes(1));
+        //find可遍历元素 可以查找引用类型数组
+        let lessons = [{ name: "js" }, { name: "css" }, { name: "mysql" }]
+        let king = lessons.find(function (item) {
+            //console.log(item);打出所遍历到的元素元素
+            return item.name === "js"//有此值则返回此对象,若无则返回undefined
+        })
+        console.log(king);
+        //findIndex
+        let kindon = lessons.findIndex(function (item) {
+            console.log(item); //打出所遍历到的元素
+            return item.name === "js"//有此值则返回此对象的索引,若无则返回-1
+        })
+        console.log(kindon);
+        //手写find原型
+        function myfind(arr, callback) {
+            for (var value of arr) {
+                if (callback(value))
+                    return value;
+            }
+            return undefined
+        }
+        console.log(
+            myfind(arr, function (item) {
+                return item == 20
+            }));
+
+    </script>
+</body>
+
+</html>

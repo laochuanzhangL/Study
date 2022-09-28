@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let player = [
+            { name: "wulei", sport: "soccer" },
+            { name: "messi", sport: "soccer" },
+            { name: "yao", sport: "backetball" }
+        ]
+        let soccerPlayer = player.filter(function (item) {
+            return item["sport"] == "soccer"//若item满足此条件则选出这个item进入返回的数组
+        })
+        console.log(soccerPlayer);
+    </script>
+</body>
+
+</html>

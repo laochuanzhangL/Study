@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(x, y) {
+            console.log("巴萨是冠军！")
+            console.log(this)
+            console.log(x + y)
+        }
+        var king = {
+            name: "Messi"
+        }
+        //1. call()可以调用函数
+        //fn.call();
+        //2. call()可以改变函数的this指向
+        //fn.call(想要改变的this指向对象，传递的参数，传递的参数...)
+        fn.call(king, 2, 4)
+    </script>
+</body>
+
+</html>

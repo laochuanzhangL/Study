@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let arr = [0, 1, 2, 5, 6, 7, 8, 9]
+        //arr = [];
+        //arr.length = 0//数组清空
+
+        //数组拆分
+        let str = "lionel,messi"
+        let hd = str.split(",")
+        console.table(hd);
+        //数组拼接
+        console.log(hd.join("-"));
+        let and = str.concat(hd)
+        console.log(and);
+        //数组复制
+        console.log(arr.copyWithin(4, 1, 3));
+        /* 第一个参数表示复制的位置
+        第二个参数表示复制的起始位置
+        第三个参数表示复制的结束位置 */
+    </script>
+</body>
+
+</html>

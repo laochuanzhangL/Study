@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap img{
+            width: 320px;
+            height: 160px;
+        }
+        .bigWrap img{
+            width: 800px;
+            height: 400px;
+        }
+        .bigWrap{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+        <div class="wrap">
+            <img src="../JS/image1.jpeg" alt="">
+            <img src="../JS/image2.jpeg" alt="">
+            <img src="../JS/image3.jpeg" alt="">
+        </div>
+        <div class="bigWrap"></div>
+        <script>
+            let imgList=document.querySelectorAll(".wrap img")
+            let big=document.querySelector(".bigWrap")
+            let wrap=document.querySelector(".wrap")
+            for(let i in imgList){
+                imgList[i].onmouseenter=function(){
+                    big.innerHTML=`<img src="${this.src}">`;
+                }
+                imgList[i].onmouseleave=function(){
+                    big.innerHTML="";
+                }
+            }
+            wrap.onmousemove=function(e){
+                let X=e.clientX;
+                let Y=e.clientY;
+                big.style.top=Y+10+"px";
+                big.style.left=X+10+"px";
+            }
+
+
+        </script>
+</body>
+</html>

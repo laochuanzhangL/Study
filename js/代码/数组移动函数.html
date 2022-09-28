@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function move(arr, from, to) {
+            if (from < 0 || from >= arr.length || to < 0 || to >= arr.length) {
+                console.error("参数错误")
+            }
+            let newArr = [...arr]
+            let item = newArr.splice(from, 1)//item是一个数组
+            newArr.splice(to, 0, ...item)//需要用展开数组将其展开
+            return newArr;
+        }
+        let arr = [1, 2, 3, 4, 5, 6]
+        console.log(move(arr, 1, 5));
+    </script>
+</body>
+
+</html>

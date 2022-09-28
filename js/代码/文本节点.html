@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="btn">按钮</button>
+    <ul class="list">
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>鸭梨</li>
+    </ul>
+    <script>
+        let int=document.querySelector("input");
+        let btn=document.querySelector(".btn");
+        let ul=document.querySelector("ul");
+        let list=document.querySelectorAll(".list li");
+            btn.onclick=function(){
+                let li=document.createElement("li")
+                let text=document.createTextNode(int.value);
+                ul.appendChild(li);
+                li.appendChild(text);
+            }
+        for(let i in list)
+        {
+            ul.onclick=function(e){
+                ul.removeChild(e.target);
+            }
+        }
+    </script>
+</body>
+</html>

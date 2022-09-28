@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .swrap {
+        width: 320px;
+        height: 160px;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .img_container {
+        width: 960px;
+        height: 160px;
+        display: flex;
+        transition: transform .5s;
+    }
+
+    img {
+        width: 320px;
+        height: 160px;
+    }
+
+    .btnList {
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="swrap">
+        <div class="img_container">
+            <img src="../JS/image1.jpeg">
+            <img src="../JS/image2.jpeg">
+            <img src="../JS/image3.jpeg">
+        </div>
+        <div class="btnList">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+        </div>
+    </div>
+    <script>
+        let btn = document.querySelectorAll(".btnList button");
+        let imagesContainer = document.querySelector(".img_container");
+        for (let i in btn) {
+            btn[i].onclick = function () {
+                imagesContainer.style.transform = `translate(${i * -320}px)`;
+            }
+        }
+        var time = 0;
+        setInterval(function () {
+            time++;
+            if (time <= 2) {
+                imagesContainer.style.transform = `translate(${-320 * time}px)`;
+            }
+            else {
+                time = 0;
+                imagesContainer.style.transform = `translate(${-320 * time}px)`;
+            }
+        }, 2000)
+    </script>
+</body>
+
+</html>

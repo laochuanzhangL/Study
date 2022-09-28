@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let target = Math.floor(Math.random() * 100 + 1);
+        function guessNumber() {
+            let str = prompt("输入一个1~100的数字");
+            if (str == target) {
+                alert("恭喜你猜对了");
+            }
+            else if (str > target) {
+                alert("数字大于目标");
+                guessNumber();
+            }
+            else if (str < target) {
+                alert("数字小于目标");
+                guessNumber();
+            }
+        }
+        guessNumber();
+    </script>
+</body>
+
+</html>

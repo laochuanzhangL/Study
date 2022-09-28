@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class person {
+            constructor(name, profession) {
+                this.name = name;
+                this.profession = profession;
+            }
+            getlnfotmation() {
+                console.log(`我的名字是${this.name}，我的职业是${this.profession}`);
+            }
+        }
+        let student = new person("小明", "学生");
+        student.getlnfotmation();
+        function Cat(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Cat.prototype.shout = function () {
+            console.log("喵喵喵！")
+        }
+
+        var cat = new Cat("miaomiao", 2);
+        cat.shout();
+    </script>
+</body>
+
+</html>

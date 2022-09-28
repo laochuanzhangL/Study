@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <SCript>
+        let user = [
+            { name: "messi", age: 89 },
+            { name: "lionel", age: 56 },
+            { name: "nemyer", age: 78 },
+        ]
+        //判断是否全部的年龄都大于60
+        const res = user.every(function (item) {
+            return item.age >= 60//如果全部item满足条件则返回true反之false
+        })
+        console.log(res ? "都六十以上" : "不是");
+        let arr = ["king", "wyxwoINI"]
+        let res = arr.some(function (value, index, arr) {
+            //有一个为真则返回true
+        })
+    </SCript>
+</body>
+
+</html>

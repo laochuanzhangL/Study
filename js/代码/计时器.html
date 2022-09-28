@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="box"></div>
+    </div>
+    <script>
+        var box=document.getElementsByName("box");
+        setInterval(function(){
+            var time=new Date();
+            var hours=time.getHours();
+            var minutes=time.getMinutes();
+            var secondes=time.getSeconds();
+            var target=new Date("2025-12-4 17:15:12");
+            var toTarget=target.getTime();
+            var toTime=time.getTime();
+            var toTargetseconds=-(toTime-toTarget)/1000;
+            var resule=Math.floor(toTargetseconds);
+            console.log(resule);
+            document.querySelector("#box").innerHTML=hours+":"+minutes+":"+secondes;
+        },1000)
+        
+    </script>
+</body>
+</html>

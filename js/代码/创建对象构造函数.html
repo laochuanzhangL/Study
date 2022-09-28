@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.  利用new object() 创建对象
+        var obj1 = new Object()
+        //2.利用{}
+        var obj2 = {}
+        //3.利用构造函数创建对象
+        function Star(name, age) {
+            this.name = name
+            this.age = age
+            this.sing = function () {
+                console.log("I casn get goal");
+            }//每次建议一个新对象就会设立一个新地址存放此函数，会造成内存的浪费。
+        }
+        //构造函数原型 
+        Star.prototype.say = function () {
+            console.log(我是足球运动员);
+        }//对象身上的__proto__指向构造的函数原型
+        console.log(nemo + '15');
+        var Messi = new Star('梅西', 34)
+        console.log(Messi);
+        Messi.sing()
+        //通过this构建的成员为实例成员
+        //实例成员只能通过实例化的对象访问 不可通过构造函数访问
+        console.log(Messi.name);//可以访问
+        console.log(Star.name);//无法访问
+        //静态成员 在构造函数身上添加的成员
+        Star.sex = "男"
+        //静态成员只能通过构造函数访问 例如
+        console.log(Star.sex);
+        console.log(Messi.sex);//此种无法访问sex成员
+        var wulei = new Star("武磊", 29)
+        console.log(wulei.sing === Messi.sing);//方法存在在不同地址
+        console.log(wulei.say === Messi.say);//方法存在于一个地址
+        //函数constructor 记录这个对象引用了哪一个构造函数
+
+        Star.prototype = {
+            constructor: Star,//指回原来的构造函数
+            win: function () {
+                console.log("我能赢");
+            }
+
+        }//此种添加函数原型更加简便 
+
+
+    </script>
+</body>
+
+</html>

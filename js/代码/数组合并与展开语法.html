@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        let div = document.querySelectorAll("div");
+        console.log(Array.from(div));//将dom节点放进数组内
+        console.log(...div);//将dom节点放进数组内
+        let arr = ["lion", "el"]
+        let king = ["mes", "si"]
+        arr = [...arr, ...king]//展开语法 ...arr表示是把数组的值一一展开。当然也可以用于函数。
+        console.log(arr);
+        function sum(...num) {
+            return num.reduce((s, v) => {
+                return s + v
+            }, 0)
+
+        }
+        console.log(sum(1, 5, 2, 6, 8));//...num 可以用来接受多个参数，并把其组成一个数组
+    </script>
+</body>
+
+</html>

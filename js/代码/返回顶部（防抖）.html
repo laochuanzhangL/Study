@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            display: none;
+        }
+
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hello</h1>
+    <button>⬆</button>
+    <script>
+        let btn = document.querySelector("button");
+        btn.onclick = () => {
+            window.scrollTo(0, 0);
+        }
+        let timer = null;
+
+        function debance() {
+            function fun() {
+                if (timer !== null) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(() => {
+                    if (document.documentElement.scrollTop > 0) {
+                        btn.style.display = "block";
+                    }
+                    else {
+                        btn.style.display = "none";
+                    }
+                    timer = null;
+                }, 500)
+            }
+            return fun;
+        }
+        window.onscroll = debance();
+    </script>
+</body>
+
+</html>

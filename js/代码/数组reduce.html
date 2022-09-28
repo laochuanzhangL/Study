@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7]
+        arr.reduce(function (pre, value, index, array) {
+            console.log(pre, value);
+            return value
+        }, 0)//pre:上一次返回的结果 此处的零是pre的第一个参数
+        let Arr = [1, 5, 6, 5, 8, 5, 4, 5]
+        function arrayCount(array, item) {//统计item在array中出现的次数
+            return array.reduce(function (total, cur) {
+                total += item == cur ? 1 : 0
+                return total
+            }, 0)
+        }
+        console.log(arrayCount(Arr, 5));
+        function max(arr) {
+            return arr.reduce(function (max, item) {
+                return max > item ? max : item
+            }, 0)
+        }
+        console.log(max(arr));
+    </script>
+</body>
+
+</html>

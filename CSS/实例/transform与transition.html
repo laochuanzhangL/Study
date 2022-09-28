@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            background-color:tomato;
+            width: 100px;
+            height: 100px;
+            border-radius: 20%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 10px 10px 14px red;
+            /*transition-timing-function 过渡函数： ease:开始和结束慢，中间快。（默认值）
+            linear:匀速
+            ease-in：开始慢
+            ease-out:结束慢
+            ease-in-out：和ease类似，但比ease幅度大*/
+            transition: 1s ease;
+            /*transition-delay 过渡延迟时间*/
+            /*transition 属性 秒数 过渡函数 过渡延迟秒数*/
+            /*transform-origin 设置旋转的原点 ;*/
+
+            
+        }
+        #box:hover{
+            transform:scale(1.5)  rotate(180deg);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

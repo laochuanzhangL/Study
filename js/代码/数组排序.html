@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 5, 9, 8, 4, 6]
+        let king = arr.sort(function (a, b) {
+            // 符输 从小到大， 正数，从大到小
+            return a - b//从小到大
+        })
+        console.log(king);
+        let cart = [
+            { name: "kun", price: 95 },
+            { name: "messi", price: 99 },
+            { name: "wulei", price: 82 }
+        ]
+        cart = cart.sort(function (a, b) {
+            return a.price - b.price;
+        })
+        console.log(cart)
+        
+    </script>
+</body>
+
+</html>
