@@ -29,6 +29,9 @@ var setZeroes = function (matrix) {
   return matrix
 }
 console.log(
-  setZeroes(
-    [[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+  setZeroes([
+    [0, 1, 2, 0],
+    [3, 4, 5, 2],
+    [1, 3, 1, 5],
+  ])
 )
