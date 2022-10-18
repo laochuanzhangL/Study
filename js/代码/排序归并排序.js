@@ -24,3 +24,4 @@ const arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]
 console.time("归并排序耗时")
 console.log("arr :", mergeSort(arr))
 console.timeEnd("归并排序耗时")
+
